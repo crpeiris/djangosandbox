@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}Simple is Better Than Complex{% endblock %}</title>
+  </head>
+  <body>
+    <a href = {% url 'home' %} > | Home | </a>
+    <a href = {% url 'loggin_user' %} > Login | </a>
+    <a href = {% url 'signup' %} > Signup | </a>
+    {% if user.is_authenticated %} 
+    <a href = {% url 'signup' %} > Logged in | </a>
+    {% endif %}
+
+    <header>
+      <h1>MY Site For SignUp Test</h1>
+    </header>
+    <main>{% block content %} {% endblock %}</main>
+  </body>
+</html>
